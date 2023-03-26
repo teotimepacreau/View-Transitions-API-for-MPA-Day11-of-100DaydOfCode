@@ -6,4 +6,4 @@
 - Transition composed by opacity, left and transform scale
 
 # 🛠️
-CSS and HTML
+CSS, HTML
