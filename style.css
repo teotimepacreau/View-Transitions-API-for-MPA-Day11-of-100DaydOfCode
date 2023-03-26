@@ -1,0 +1,239 @@
+/* CSS RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default list styles */
+ul, ol, li {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+}    
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+    
+/* A element that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+    
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%; /* img should never overflow past the available space*/
+  display: block; /* avoid blank bottom*/
+  height: auto;/*preserve aspect ratio*/
+}
+
+/* More consistent, styleable hr*/
+hr {
+  border-width: 1px 0 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Remove built-in form typography styles */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* More space above the underline */
+a {
+  text-underline-offset: 0.2ex;
+  text-decoration: none;
+  color: unset;
+}
+
+
+/*body *{
+    outline : 2px solid red ;
+}*/
+
+/* FONTS */
+@font-face {
+  font-family: 'Switzer-Variable';
+  src: local("Switzer-Variable"),
+  url("Switzer-Variable.woff2") format("woff2");
+       font-weight: 100 900;
+       font-display: geometricprecision;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Switzer-Variable-Italic';
+  src: local("Switzer-VariableItalic"),
+  url("Switzer-VariableItalic.woff2") format("woff2");
+       font-weight: 100 900;
+       font-display: geometricprecision;
+       font-style: normal;
+}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+  --taillesubtitle: 1.618rem;
+  --tailleh4: 2.618rem;
+  --tailleh3: 4.236rem;
+  --tailleh2: 6.854rem;
+  --tailleh1: 11.089rem;
+  --rythme: 1.5rem;
+  --bg: #c4ced6;
+  --bgdarker : #62676b;
+  --txt: #2d2c2c;
+  --accent: #788041;
+}
+
+/* TYPE SETTINGS */
+p {
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: var(--tailleh1);
+  line-height: 1.2;
+  letter-spacing: 0.02rem;
+  font-variation-settings: "wght" 700;
+}
+
+body {
+  font-family: "Switzer-Variable";
+  background-color: var(--bg);
+  color: var(--txt);
+}
+
+span {
+  font-family: "Switzer-Variable-Italic";
+  font-variation-settings: "wght" 300;
+}
+
+
+/*CONTAINER*/
+
+.container-index {
+  margin: var(--rythme);
+}
+
+/*NAVBAR*/
+.nav-index {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--rythme);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  line-height: 1.4;
+  padding-inline: calc(0.6*var(--rythme));
+  padding-block: calc(0.2*var(--rythme));
+  border-radius: calc(0.75*var(--rythme));
+  gap: calc(0.25*var(--rythme));
+  text-decoration: none;
+  font-size: var(--tailleparagraphe);
+  font-weight: 500;
+}
+
+.main-btn {
+  background-color: var(--bgdarker);
+  color: var(--bg);
+}
+.secondary-btn {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+a {
+  display: flex;
+  gap: calc(0.5*var(--rythme));
+  justify-content: space-between;
+  align-items: center;
+}
+/*MAIN*/
+
+.product-show {
+  display: flex;
+}
+
+.product-list {
+  flex: 1 1 50%;
+}
+
+.product-list > li {
+  border-top: 2px solid var(--txt);
+  padding-block: var(--rythme);
+}
+
+.img-index {
+  flex: 1 1 50%;
+}
+
+.bottom-img-index {
+  object-view-box: inset(15%);
+}
+
+/* DETAILS PAGE*/
+.img-details {
+  height: 85dvh;
+  display: flex;
+  justify-content: center;
+}
+
+.img-details > img {
+  height: 100%;
+  object-view-box: inset(15%);
+}
+
+/*VIEW TRANSITION API STYLING*/
+
+::view-transition-old(root) {
+  animation-name: slide-left;
+  animation-duration: 2s;
+}
+
+::view-transition-new(root) {
+  animation-name: slide-right;
+  animation-duration: 2s;
+}
+
+@keyframes slide-left {
+  from {
+    transform: scale(1);
+    left: 0%;
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    left: -100%;
+    opacity: 0;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: scale(0);
+    left: -100%;
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    left: 0%;
+    opacity: 1;
+  }
+}
