@@ -1,11 +1,9 @@
 # View Transitions API on MPA
-![View-transition-api-demo](https://github.com/teotimepacreau/View-Transitions-API-Day10-Of-100DaysOfCode/blob/main/View-transition-api.gif)
+![View-transition-api-for-MPA-demo](https://github.com/teotimepacreau/View-Transitions-API-for-MPA-Day11-of-100DaysOfCode/blob/main/View%20Transitions%20MPA.gif)
 
 # Project goals
-- View Transitions API experimentation : understanding principle of implementation with VanillaJS .startViewTransition and DOMChanges activator. 
-- Transition composed by opacity and left to right
-- Customize transitions with ::view-transition-old(root) and ::view-transition-old(new) in CSS
-- Playing with button styling and ellipses
+- HTML meta tags on both pages to unlock transitions API without JS
+- Transition composed by opacity, left and transform scale
 
 # 🛠️
-View Transitions API, Vanilla JS, CSS, HTML
+CSS and HTML
